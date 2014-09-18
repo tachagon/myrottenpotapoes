@@ -1,7 +1,6 @@
-%h2 Create New Movie
+%h2 Edit #{@movie.title}
 
-= form_tag movies_path, :method => :post do
-
+= form_tag "/movies/#{@movie.id}/", :method => :put do
 	= label :movie, :title, 'Title'
 	= text_field :movie, :title
 
@@ -12,5 +11,5 @@
 	= date_select :movie, :release_date
 	%br
 	%br
-	= submit_tag 'Save Changes'
-	= link_to 'cancle', movies_path
+	= submit_tag 'Update Movie'
+	= link_to 'cancle', "/movies/#{@movie.id}"
