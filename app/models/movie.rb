@@ -24,5 +24,5 @@ class Movie < ActiveRecord::Base
 	 release_date && release_date >= @@grandfathered_date
 	end
 	
-	has_many :reviews
+	has_many :reviews, :dependent => :destroy
 end
