@@ -7,6 +7,7 @@
 		= csrf_meta_tags
 		
 	%body
+		= render :partial=>'sessions/login'
 		%banner My Rottenpotatoes
 		- if flash[:notice]
 			#notice.message= flash[:notice]
