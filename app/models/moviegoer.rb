@@ -7,4 +7,6 @@ class Moviegoer < ActiveRecord::Base
 			:name => auth["info"]["name"]
 		)
 	end
+	
+	has_many :reviews
 end

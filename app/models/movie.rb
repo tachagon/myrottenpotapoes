@@ -23,4 +23,6 @@ class Movie < ActiveRecord::Base
 	def grandfathered?
 	 release_date && release_date >= @@grandfathered_date
 	end
+	
+	has_many :reviews
 end
