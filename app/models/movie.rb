@@ -25,4 +25,18 @@ class Movie < ActiveRecord::Base
 	end
 	
 	has_many :reviews, :dependent => :destroy
+	
+	scope :with_good_reviews, lambda{|threshold|
+		having(['AVG(reviews.potatoes) > ?', threshold])
+	}
+	
+	scope :for_kids, lambda{
+		Movie.where('rating in ?', %w(G PG))
+	}
+	
+	scope :recently_reviewed, lambda { |n|
+		Movie.joins(:reviews).where(['reviews.create_at >= ?', n.days.ago]).uniq
+	}
+	
+	scope :for_kids, Movie.where('rating in ?', %w(G PG))
 end
