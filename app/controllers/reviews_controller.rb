@@ -27,4 +27,16 @@ class ReviewsController < ApplicationController
     redirect_to movie_path(@movie)
   end
   
+  def edit
+    #@all_review = Movie.find_by_id(params[:movie_id]).reviews
+    @movie = Movie.find_by_id(params[:id])
+    #@review = @all_review.find_by_moviegoer_id(@current_user.id)
+  end
+  
+  def update
+    
+    @current_user.reviews << @movie.reviews.update(params[:review])
+    redirect_to movie_path(@movie)
+  end
+  
 end
