@@ -1,5 +1,4 @@
-%tr{:class => ('adult' unless movie.rating =~ /^G|PG$/)}
-  %td= movie.title
-  %td= movie.rating
-  %td= movie.release_date
-  %td= link_to "More about #{movie.title}", movie_path(movie)
+%p= movie.description
+
+= link_to 'Edit Movie', edit_movie_path(movie)
+= link_to 'Close', '', {:id => 'closeLink'}

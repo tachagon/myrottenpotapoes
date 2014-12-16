@@ -125,3 +125,9 @@ a hover {
 	text-align: center;
 	margin-left: 20px;
 }
+#movieInfo{
+	padding: 2ex;
+	position: absolute;
+	border: 2px double grey;
+	background: wheat;
+}

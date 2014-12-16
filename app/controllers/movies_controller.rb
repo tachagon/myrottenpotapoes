@@ -4,8 +4,10 @@ class MoviesController < ApplicationController
 	end
 	
 	def show
-		@movie = Movie.find_by_id(params[:id]) # what if this movie not in DB?
-#BUG: we should check @movie for validity here!
+		id = params[:id] # retrieve movie ID from URI route
+		@movie = Movie.find(id) # look up movie by unique ID
+		render(:partial => 'movie', :object => @movie) if request.xhr?
+		# will render app/view/movies/show.<extension> by default
 	end
 	
 	def new
