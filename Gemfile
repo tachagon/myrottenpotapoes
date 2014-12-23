@@ -45,3 +45,4 @@ group :development, :test do
 end
 
 gem 'omniauth-twitter'
+gem "jasmine"
