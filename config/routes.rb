@@ -3,10 +3,11 @@ Myrottenpotatoes::Application.routes.draw do
     resources :reviews
   end
   root :to => redirect('/movies')
-  match 'auth/twitter',:as => 'login'
-  match 'auth/:provider/callback' => 'sessions#create'
-  match 'logout' => 'sessions#destroy'
-  match 'auth/failure' => 'sessions#failure'
+  post '/movies/search_tmdb'
+  #match 'auth/twitter',:as => 'login'
+  #match 'auth/:provider/callback' => 'sessions#create'
+  #match 'logout' => 'sessions#destroy'
+  #match 'auth/failure' => 'sessions#failure'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

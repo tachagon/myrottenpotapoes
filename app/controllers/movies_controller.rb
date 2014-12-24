@@ -66,4 +66,10 @@ class MoviesController < ApplicationController
 		%w(for_kids with_many_fans recently_reviewed).each {|filter|
 			@movies = @movies.send(filter) if params[filter]}
 	end
+	
+	def search_tmdb
+		# hardwire to simulate failure
+		flash[:warning] = "'#{params[:search_terms]}' was not found in TMDb."
+		redirect_to movies_path
+	end
 end
