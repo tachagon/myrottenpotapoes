@@ -45,7 +45,9 @@ group :development, :test do
 end
 
 gem 'omniauth-twitter'
-gem "jasmine"
+gem 'jasmine'
+gem 'themoviedb'
+gem 'jquery'
 
 group :test, :development do
   gem 'cucumber-rails'
@@ -53,4 +55,7 @@ group :test, :development do
   gem 'database_cleaner'
   gem 'capybara'
   gem 'launchy'
+  gem 'rspec-rails', '2.14'
+  gem 'autotest-rails'
+  gem 'ZenTest'
 end
