@@ -70,8 +70,14 @@ GEM
     debugger-linecache (1.2.0)
     debugger-ruby_core_source (1.2.3)
     diff-lcs (1.2.5)
+    docile (1.1.5)
     erubis (2.7.0)
     execjs (2.2.1)
+    factory_girl (4.5.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.5.0)
+      factory_girl (~> 4.5.0)
+      railties (>= 3.0.0)
     gherkin (2.12.2)
       multi_json (~> 1.3)
     haml (4.0.4)
@@ -160,6 +166,11 @@ GEM
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
+    simplecov (0.9.1)
+      docile (~> 1.1.0)
+      multi_json (~> 1.0)
+      simplecov-html (~> 0.8.0)
+    simplecov-html (0.8.0)
     sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -193,6 +204,7 @@ DEPENDENCIES
   cucumber-rails-training-wheels
   database_cleaner
   debugger
+  factory_girl_rails
   haml
   jasmine
   jquery
@@ -202,6 +214,7 @@ DEPENDENCIES
   rails (= 3.2.16)
   rspec-rails (= 2.14)
   sass-rails (~> 3.2.3)
+  simplecov
   sqlite3
   themoviedb
   uglifier (>= 1.0.3)
